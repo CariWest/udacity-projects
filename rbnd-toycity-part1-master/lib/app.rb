@@ -5,7 +5,7 @@ products_hash = JSON.parse(file)
 
 # Print today's date
 
-puts "********* NOT DONE *********"
+puts "Today's Date: #{Time.now.strftime("%D")}"
 
 puts "                     _            _       "
 puts "                    | |          | |      "
