@@ -72,21 +72,17 @@ puts
 
 brands_hash = {}
 
-def create_brand_data_subhash(brand_name)
-  brands_hash[brand] = {
-    "total_toys_stocked"  => 0,
-    "toy_prices"    => [],
-    "total_revenue" => 0
-  }
-end
-
 products_hash["items"].each do |product|
   brand = product["brand"]
 
   # If brand doesn't exist in hash yet, create
   # the hash to collect brand data
   unless !!brands_hash[brand]
-    create_brand_data_subhash(brand)
+    brands_hash[brand] = {
+      "total_toys_stocked"  => 0,
+      "toy_prices"    => [],
+      "total_revenue" => 0
+    }
   end
 
   product_purchases = product["purchases"].map { |purch| purch["price"].to_f }
